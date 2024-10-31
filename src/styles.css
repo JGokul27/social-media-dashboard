@@ -1,0 +1,177 @@
+/* styles.css */
+
+/* Basic Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Root Styling */
+:root {
+    --bg-color: #f9f9fb;
+    --sidebar-bg: #2c3e50;
+    --header-bg: #34495e;
+    --main-text: #333;
+    --accent-color: #2980b9;
+    --card-bg: #fff;
+    --font-size-small: 14px;
+    --font-size-medium: 16px;
+    --font-size-large: 18px;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--main-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Layout Styles */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+    background-color: var(--header-bg);
+    padding: 1rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    font-size: var(--font-size-large);
+}
+
+.settings {
+    font-size: var(--font-size-small);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    color: white;
+    padding: 1.5rem 1rem;
+    width: 220px;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+}
+
+.sidebar nav ul li {
+    padding: 0.5rem 0;
+    font-size: var(--font-size-medium);
+    cursor: pointer;
+}
+
+.sidebar nav ul li:hover {
+    color: var(--accent-color);
+}
+
+/* Main Content Layout */
+.dashboard-content {
+    display: flex;
+}
+
+main {
+    flex-grow: 1;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Card Styles */
+section {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    font-size: var(--font-size-large);
+    margin-bottom: 1rem;
+}
+
+/* Stats Grid */
+.overview-stats .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    font-size: var(--font-size-medium);
+}
+
+/* Engagement Graph & Follower Growth */
+.engagement-graph,
+.followers-growth-chart {
+    grid-column: span 2;
+    text-align: center;
+}
+
+/* Post Performance Table */
+.post-performance table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-small);
+}
+
+.post-performance th,
+.post-performance td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-performance th {
+    background-color: #f4f4f6;
+}
+
+/* Demographics */
+.demographics p {
+    margin: 0.5rem 0;
+}
+
+/* Activity Feed */
+.activity-feed {
+    grid-column: span 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard {
+        width: 100%;
+    }
+
+    .dashboard-content {
+        flex-direction: column;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+    }
+}
